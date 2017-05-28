@@ -1,0 +1,54 @@
+# Mod_Autoindex
+<IfModule mod_autoindex.c>
+    # Disable Indexes
+    Options -Indexes
+</IfModule>
+
+# Cash
+<IfModule mod_expires.c>
+    <FilesMatch \.(gif|png|jpg|jpeg|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm)$>
+        ExpiresDefault "access plus 1 year"
+    </FilesMatch>
+    ExpiresActive on
+    ExpiresByType image/jpeg "access plus 7 day"
+    ExpiresByType image/gif "access plus 7 day"
+    ExpiresByType image/png "access plus 7 day"
+    <FilesMatch \.(css|js)$>
+        ExpiresDefault "access plus 1 year"
+    </FilesMatch>
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
+
+# Mod_Rewrite
+<IfModule mod_rewrite.c>
+    # Enable symlinks
+    Options +FollowSymlinks
+    # Enable mod_rewrite
+    RewriteEngine On
+
+    # Uploads redirect
+    RewriteCond %{REQUEST_URI} ^/uploads
+    RewriteRule ^uploads/(.*)$ uploads/$1 [L]
+
+    # Backend redirect
+    RewriteCond %{REQUEST_URI} ^/backend
+    RewriteRule ^backend/(.*)$ backend/web/$1 [L]
+
+    # Frontend redirect
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ frontend/web/$1 [L]
+
+    # Blocking access from libwww-perl eliminates many simpler attacks
+    RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+    RewriteRule .* � [F,L]
+</IfModule>
+
+# Deny accessing below extensions
+<Files ~ "(.json|.lock|.git)">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Deny accessing dot files
+RewriteRule (^\.|/\.) - [F]

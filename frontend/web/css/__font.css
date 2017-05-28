@@ -1,0 +1,54 @@
+/* Arimo Regular */
+
+@font-face { 
+    font-family: "Arimo";
+    src: url(../fonts/ArimoRegular/ArimoRegular.eot?) format("eot"),
+         url(../fonts/ArimoRegular/ArimoRegular.woff) format("woff"),
+         url(../fonts/ArimoRegular/ArimoRegular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Arimo Bold */
+
+@font-face { 
+    font-family: "Arimo";
+    src: url(../fonts/ArimoBold/ArimoBold.eot?) format("eot"),
+         url(../fonts/ArimoBold/ArimoBold.woff) format("woff"),
+         url(../fonts/ArimoBold/ArimoBold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Arimo Italic */
+
+@font-face { 
+    font-family: "Arimo";
+    src: url(../fonts/ArimoItalic/ArimoItalic.eot?) format("eot"),
+         url(../fonts/ArimoItalic/ArimoItalic.woff) format("woff"),
+         url(../fonts/ArimoItalic/ArimoItalic.ttf) format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Comfortaa Regular */
+
+@font-face { 
+    font-family: "Comfortaa";
+    src: url(../fonts/ComfortaaRegular/ComfortaaRegular.eot?) format("eot"),
+         url(../fonts/ComfortaaRegular/ComfortaaRegular.woff) format("woff"),
+         url(../fonts/ComfortaaRegular/ComfortaaRegular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Comfortaa Bold */
+
+@font-face { 
+    font-family: "Comfortaa";
+    src: url(../fonts/ComfortaaBold/ComfortaaBold.eot?) format("eot"),
+         url(../fonts/ComfortaaBold/ComfortaaBold.woff) format("woff"),
+         url(../fonts/ComfortaaBold/ComfortaaBold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}

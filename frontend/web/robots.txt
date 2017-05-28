@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /backend
+
+Host: http://kovkasnab.ru
+Sitemap: http://kovkasnab.ru/sitemap.xml

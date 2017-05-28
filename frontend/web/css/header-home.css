@@ -1,0 +1,45 @@
+.header-home {
+	background: #222222;
+	border: 0;
+}
+
+.header-home .logo-bright {
+    opacity: 1;
+}
+
+.header-home a {
+	color: #ffffff;
+}
+
+.header-home .title {
+	color: #ffffff;
+}
+
+.header-home .header-menu ul {
+	background: #222222;
+}
+
+.header-home .header-menu a {
+	color: #cccccc;
+}
+
+.header-home .header-menu a:hover {
+	color: #ffffff;
+}
+
+.header-home .header-menu .active a{
+	background: #950c0c;
+	color: #ffffff;
+}
+
+.header-home .feedback i {  
+    color: #cccccc;
+}
+
+.header-home .feedback:hover i {
+    color: #ffffff;
+}
+
+.header-home .menu-global {
+	border-top: 4px solid #cccccc;
+}

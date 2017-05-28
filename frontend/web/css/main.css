@@ -1,0 +1,1084 @@
+/* Стили по тегам */
+
+* {
+    margin: 0;
+    padding: 0;
+	font-family: Arimo;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: normal;
+}
+
+body {
+	padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+     text-align: center !important;
+ }
+
+h1, h2 {
+    font: bold normal 20pt Comfortaa;
+}
+
+h3, h4 {
+    margin: 0;
+    font: bold normal 12pt Arimo;
+}
+
+h5, h6 {
+    margin: 0;
+    font: bold normal 10pt Arimo;
+}
+
+.btn:focus, .form-control:focus {
+    border-color: #cccccc;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(200,200,200,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(200,200,200,.6);
+}
+
+.btn:focus {
+    color: #ffffff;
+}
+
+
+/* Общие стили */
+
+.site-error {
+    height: 100vh;
+}
+
+.white-area {
+    color: #222222;
+}
+
+.gray-area {
+    background: #dddddd;
+    color: #222222;
+}
+
+.red-area {
+    background: #c24c4c;
+    color: #ffffff;
+}
+
+.parallax-area {
+    background: transparent;
+    color: #ffffff;
+}
+
+.space-area {
+    height: 40px;
+}
+
+.spacer {
+    width: 100%;
+    height: 0px;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.clear {
+	clear: both;
+}
+
+.vertical-top {
+    display: flex;
+    align-items: flex-start;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.vertical-bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.horizontal-left {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.horizontal-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.horizontal-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* Меню для смартфонов */
+
+
+.menu-collapsed {
+    opacity: 0;
+    transition: all .25s;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.menu-collapsed * {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-collapsed ul {
+    transition: all 0s;
+    position: fixed;
+    left: -9000px;
+}
+
+.menu-expanded {
+    opacity: 1;
+    transition: all .25s;
+    text-align: center;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.menu-expanded ul {
+    height: 100%;
+    transition: all 0s;
+    position: relative;
+    left: 0;
+    z-index: 2;
+}
+
+.menu-expanded li {
+    height: 25%;
+    position: relative;
+}
+
+.menu-expanded a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .15s;
+    text-decoration: none;
+    font: bold normal 20pt Comfortaa;
+    color: #ccc;
+}
+
+.menu-expanded a:hover {
+    background: rgba(255,255,255,0.5);
+    transition: all .15s;
+    letter-spacing: 2px;
+    color:#ffffff;
+}
+
+#burger-button {
+    cursor: pointer;
+    margin: 0 0 0 20px;
+    padding-left: 1.25em;
+    position: relative;
+    width: 30px;
+    height: 25px;
+}
+.menu-global {
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    border-top: 4px solid #666666;
+    width: 100%;
+    transition: 0.35s;
+}
+.menu-top {
+    top: 0;
+}
+.menu-middle {
+    top: 10px;
+}
+.menu-bottom {
+    top: 20px;
+}
+.menu-top-click {
+    backface-visibility: hidden;
+    top: 10px;
+    transform: rotate(45deg);
+    transition: 0.5s 0.1s;
+}
+.menu-middle-click {
+    opacity: 0;
+}
+.menu-bottom-click {
+    backface-visibility: hidden;
+    top: 10px;
+    transform: rotate(-405deg);
+    transition: 0.5s 0.1s;
+}
+
+
+/* Модальное окно */
+
+.modal-header {
+    font: bold normal 16pt Comfortaa;
+}
+
+
+/* Шапка */
+
+.header {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+	overflow: hidden;
+    background: #ffffff;
+	border-bottom: 1px solid #cccccc;
+	transition: 1s ease-in-out;
+}
+
+
+.header .container, .header .row, .header [class*='col-'] {
+    position: relative;
+    height: 100%;    
+}
+
+.header .logo {
+    position: relative;
+    text-decoration: none;
+}
+
+.header .logo img {
+	width: 52px;
+	height: 52px;
+	transition: 1s ease-in-out;
+}
+
+.header .logo-bright {
+	position: relative;
+	opacity: 0;
+}
+
+.header .logo-dim {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.header .title {
+	margin-left: 10px;
+    font: bold normal 20pt Comfortaa;	
+    color: #666666;
+	transition: 1s ease-in-out;
+}
+
+.header-menu {
+    margin: 0;    
+}
+
+.header-menu li {
+	position: relative;
+    display: inline;
+}
+
+.header-menu ul {
+	z-index: 10;
+	position: absolute;
+	right: -9999px;
+    padding: 25px 0 10px 0;
+	background: #ffffff;
+	opacity: 0;
+	transition: opacity 1s ease-in-out, background 1s ease-in-out, color 1s ease-in-out;
+}
+
+.header-menu ul:hover, .header-menu li:hover ul {
+	right: 0;
+	opacity: 1;
+}
+
+.header-menu ul li {
+    margin: 0;
+}
+
+.header-menu a {    
+    padding: 8px 10px;
+	font: bold normal 11pt Comfortaa;
+    color: #666666;
+	text-decoration: none;
+	border-radius: 2px;
+	/*transition: 1s ease-in-out;*/
+}
+
+.header-menu a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.header-menu .active a{
+    color: #ffffff;
+    background: #a62b2b;
+}
+
+.feedback i {  
+    margin: 0 10px;
+    font-size: 20pt;
+    color: #666666;
+}
+
+.feedback:hover i {
+    color: #000000;
+}
+
+/* Баннер на главной */
+
+.home-banner {
+    z-index: 0;
+	position: relative;	
+	min-height: 100vh;
+}
+
+.home-banner .container {
+    position: relative;
+    height: 100%;
+}
+
+.home-banner .contacts {
+	margin-top: 50px;
+    font: normal normal 14pt Arimo;
+    color: #222222;
+}
+
+.home-banner .contacts table {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+.home-banner .contacts td  {
+    padding: 15px;
+}
+
+.home-banner .contacts i  {
+    font-size: 20pt;
+}
+
+.home-banner .home-categories{
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.home-banner .item {
+    padding: 15px;    
+    margin: 0 auto;
+}
+
+.home-banner .item .wrapper {
+    z-index: 0;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 55%;
+    padding-bottom: 55%;
+    transition: 0.5s ease;
+}
+
+.home-banner .item:hover .wrapper {
+    background: rgba(255, 255, 255, 1);
+}
+
+.home-banner .home-categories .box {
+    opacity: 1;
+    padding: 15px;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home-banner .home-categories h5 {
+    width: 100%;
+    height: 27%;
+    padding: 5% 2% 0;
+    text-align: center;
+    vertical-align: middle;
+    font: bold normal 13pt Comfortaa;
+    color: #000000;
+}
+
+.home-banner .home-categories .image {
+    margin: 0 auto;
+    padding: 2%;
+    height: 73%;
+}
+
+.home-banner .item img{
+    max-height: 90%;
+	transition: 0.2s ease;
+}
+
+.home-banner .item:hover img{
+    max-height: 100%;
+}
+
+.home-banner .scroll-button {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -35px;    
+    width: 50px;
+    height: 50px;    
+    background: #950c0c;
+	border-radius: 2px;
+    cursor: pointer;
+}
+
+.home-banner .scroll-button img {
+	margin-top: 2px;
+	width: 35px;
+}
+
+.home-banner .scroll-button .arrow_white, .home-banner .scroll-button:hover .arrow_gray {
+    display: none;
+}
+
+.home-banner .scroll-button:hover .arrow_white, .home-banner .scroll-button .arrow_gray {
+    display: block;
+}
+
+/* Ника-3 */
+
+.nika {
+    border: solid 2px #333333;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.nika .nika-text {
+    min-height: 120px;
+    height: 100%;
+}
+
+.nika .nika-text a {
+    text-align: center;
+    font: bold normal 20pt Comfortaa;
+    color: #333333;
+}
+
+
+/* Каталог */
+
+
+.catalog .item {
+    text-align: center;
+	padding: 15px;
+}
+
+.catalog .item * {
+    text-decoration: none;
+}
+
+.catalog .item .wrapper-1 {
+    width: 100%;
+    max-width: 150px;
+}
+
+.catalog .item .wrapper-2 {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 170%;
+}
+
+.catalog.main-catalog .item .wrapper-2 {
+	padding-bottom: 130%;
+}
+
+.catalog .item .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.catalog .item a h3 {
+    height: 20%;
+    margin: 0 0 1%;
+    color: #222222;
+	border-radius: 3px;
+    transition: 0.5s ease;
+}
+
+.catalog .item a:hover h3 {
+    background: #a62b2b;    
+    color: #ffffff;
+}
+
+.catalog .yellow-circle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 70px;    
+    height: 70px;
+    border-radius: 35px;
+    background: #ffff33;
+    font: bold normal 10pt Arimo;
+    color: #222222;
+}
+
+.catalog .image {
+    height: 63%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.catalog.catalog-categories .image {
+    height: 81%;
+}
+    
+.catalog .image img {
+    height: 90%;
+    transition: 0.5s ease;
+}
+
+.catalog .item:hover .image img {
+    height: 100%;
+}
+
+.catalog .price {
+    height: 15%;
+    margin: 1% 0 0;
+}
+
+.catalog .price-old {
+    margin-top: 2pt;
+    font: bold normal 8pt Arimo;
+    text-decoration: line-through;
+    color: #666666;
+}
+
+.catalog .price-actual {
+    font: bold normal 12pt Arimo;
+    color: #222222;
+}
+
+/* Блок фильтр */
+
+.filter-form {
+    width: 100%;
+    padding: 20px;    
+    border: 1px solid #666666;
+    border-radius: 5px;
+	margin: 10px 0;
+}
+
+.filter-form .help-block {
+    display: none;
+}
+
+.filter-form .form-group {
+    margin: 0;
+}
+
+.filter-form .line {
+    margin: 5px 0;
+    font: normal normal 11pt Arimo;
+}
+
+.filter-form .line > * {
+    margin-right: 10px;
+}
+
+.filter-form .line div {
+    width: 30%;
+}
+
+.filter-form .line span {
+    font: normal normal 11pt Arimo;
+}
+
+.element {
+    margin: 0 0 40px;
+}
+
+.filter-form h5 {
+    font: bold normal 12pt Arimo;
+}
+
+.filter-form input {
+    font: normal normal 10pt Arimo;
+    line-height: 16pt;
+
+}
+
+.filter-form .checkbox {
+    margin: 10px 0;
+}
+
+.filter-form .checkbox label {
+    padding: 0;
+}
+
+.filter-form .checkbox input[type="checkbox"] {
+    position: relative;
+    float: right;
+    margin: -2px 30px 0 0;
+    padding: 0;
+    width: 0;
+}
+
+.filter-form .checkbox input:after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filter-form .checkbox input:checked:after {
+    content: "\2714";
+    padding: 2px 4px;
+    font-size: 15pt;
+}
+
+
+.filter-form .buttons {
+    width: 100%;
+    height: 50px;
+}
+
+.filter-form .buttons input {
+    width: auto;
+}
+
+.filter-form .btn-group {
+    margin-top: 40px;
+    width: 100%;
+}
+
+form .btn {
+    padding: 8px 10px;
+    font: bold normal 10pt Arimo;
+    color: #ffffff;
+}
+
+form .btn.red{
+    background: #a62b2b;
+}
+
+form .btn.red:hover{
+    background: #ba3131;
+    color: #ffffff;
+}
+
+form .btn.gray{
+    background: #888888;
+}
+
+.filter-form .btn.gray:hover{
+    background: #999999;
+    color: #ffffff;
+}
+
+.filter-form  .range-slider {
+    margin: 15px 3%;
+    height: 10px;
+    width: 94%;
+    cursor: pointer;
+}
+
+.filter-form  .range-slider .noUi-origin {
+        z-index: 2;
+}
+
+.filter-form  .range-slider .noUi-connect {
+	background: #a62b2b;
+    z-index: 1;
+}
+
+.filter-form  .range-slider .noUi-handle {
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.filter-form  .range-slider .noUi-handle:before {
+    top: 4px;
+    left: 6px;
+    width: 1px;
+    height: 10px;
+}
+
+.filter-form  .range-slider .noUi-handle:after {
+    top: 4px;
+    left: 11px;
+    width: 1px;
+    height: 10px;
+}
+ 
+.sort {
+	font: bold normal 10pt Arimo;
+	color: #666666;
+	height: 25px;
+}
+
+.sort select {
+    margin: -5px 5px 0;
+    height: 25px;
+}
+
+
+/* Торвар */
+
+.product .full-image {
+    padding: 15px 0;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.product .full-image .wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.product .full-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 3px;
+    transition: 1s ease-in-out;
+}
+
+.product .full-image img.active {
+    opacity: 1;
+}
+
+.product .preview-images {
+    margin: 0;
+    padding: 5px;
+    background: #dddddd;
+    border-radius: 3px;
+}
+
+.product .preview-image {
+    padding: 5px;
+}
+
+.product .preview-image {
+    margin: 0 auto;
+}
+
+.product .preview-image .wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.product .preview-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 1s ease-in-out;
+}
+
+.product .preview-image img.active {
+    opacity: 1;
+}
+
+.product .table-container {
+    margin: 15px;
+}
+
+.product table .first {
+    width: 30%;
+    font: bold normal 12pt Arimo;
+    padding: 10px 20px;
+}
+
+.product table .second {
+    width: 70%;
+    font: normal normal 12pt Arimo;
+    padding: 10px 20px;
+}
+
+.product table .price td {
+    font: bold normal 18pt Arimo;
+}
+
+/* Статьи */
+
+.posts .item {
+    margin: 30px 0;
+}
+
+.posts .item * {
+    color: #222222;
+    text-decoration: none;
+}
+
+.posts a:hover .panel-heading {
+    background: #eeeeee;
+}
+
+.posts .item h2 {
+    font: bold normal 14pt Arimo;
+    margin: 0;
+}
+
+ 
+/* Текст статьи */
+
+.post .date {
+    margin: 10px 0;
+}
+
+.text > * {
+    text-align: justify;
+    margin: 15px;
+    line-height: 25pt;
+}
+
+.text > h4 {
+    text-align: center;
+}
+
+.text > p {
+    margin: 20px 5px;
+}
+
+.text > ul, .item ul {
+    padding: 0 15px;
+}
+
+.text .map {
+    height: 600px;
+}
+
+/* Блок как */
+
+.how .title, .how .item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.how .title {
+    font: bold normal 22pt Comfortaa;
+}
+
+.how .item {
+    flex-direction: column;
+    text-align: center;
+    font: bold normal 16pt Comfortaa;
+}
+
+.how .item i {
+    margin: 20px;
+    font-size: 50pt;
+}
+
+/* Блок преимущества */
+
+.advantages .white-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 35px;
+    background: #ffffff;
+    color: #c24c4c;
+    font-size: 20pt;
+}
+
+.advantages .item {
+    margin: 30px 0;
+}
+
+.advantages p {
+    margin: 5px 20px 0px;
+    text-align: center;
+    font: normal normal 12pt Arimo;
+    line-height: 20pt;
+}
+
+/* Блок категории */
+
+.categories {
+    min-height: 200px;
+}
+
+.categories .item {
+    float: left;
+    margin: 15px;    
+}
+
+.categories .item a {    
+    text-decoration: none;        
+}
+
+.categories .item a h5 {
+    padding: 10px;
+    color: #222222;
+    background: #ffffff;
+	border-radius: 2px;
+}
+
+.categories .item a:hover h5 {
+    background: #a62b2b;
+    color: #ffffff;
+}
+
+/* Блок статьи */
+
+.random-posts .item {
+    padding: 5px;
+}
+
+.random-posts .item a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.random-posts .item img {
+	width: 100%;
+}
+
+.random-posts .item .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.random-posts .item .box {
+    position: absolute;
+	flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+	transition: 1s ease;
+}
+
+.random-posts .item .title {
+	margin-top: 60px;
+	padding: 15px;
+    max-width: 80%;
+    font: bold normal 12pt Arimo;    
+    color: #222222;    
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    transition: 1s ease;
+}
+
+.random-posts .item .space {
+	width: 100%;
+	height: 1px;
+}
+
+
+.random-posts .white-circle {
+    margin-top: 10px;
+	width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14pt;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.random-posts a:hover .box{
+    background: rgba(50, 50, 50, 0.8);
+    color: #ffffff;	
+}
+
+.random-posts a:hover .title {
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0);
+    color: #ffffff;	
+}
+
+.random-posts a:hover .white-circle {
+    color: #a62b2b;
+    opacity: 1;
+}
+
+
+/* Подвал */
+
+
+.footer {
+    background: #222222;
+    height: 100px;
+    
+}
+
+.footer .container, .footer .row {
+    position: relative;
+    height: 100%;
+    font: normal normal 12pt Arimo; 
+    color: #ffffff;
+}
+
+.footer .scroll-button {
+    z-index: 10;
+    position: absolute;
+    right: 1%;
+    bottom: 0;
+    width: 50px;
+    height: 50px;    
+    background: #a62b2b;
+	border-radius: 0 0 2px 2px;
+    cursor: pointer;
+    transform: rotateZ(180deg);
+}
+
+.footer .scroll-button img {
+	width: 35px;
+	margin-bottom: 5px;
+}
+
+.footer .scroll-button .arrow_white, .footer .scroll-button:hover .arrow_gray {
+    display: none;
+}
+
+.footer .scroll-button:hover .arrow_white, .footer .scroll-button .arrow_gray {
+    display: block;
+}
