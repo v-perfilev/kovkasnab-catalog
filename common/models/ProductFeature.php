@@ -47,9 +47,9 @@ class ProductFeature extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'product_id' => 'Product ID',
-            'feature_id' => 'Feature ID',
-            'feature_value_id' => 'Feature Value ID',
+            'product_id' => 'ID товара',
+            'feature_id' => 'ID характеристики',
+            'feature_value_id' => 'ID значения',
         ];
     }
 
