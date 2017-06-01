@@ -44,7 +44,7 @@ class PostController extends Controller
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
         $searchModel = new PostSearch();
 
@@ -78,7 +78,7 @@ class PostController extends Controller
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
         $post = $this->findModelBySlug($slug);
 

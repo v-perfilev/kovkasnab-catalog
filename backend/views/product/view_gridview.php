@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 
 ?>
 
-<?php Pjax::begin([ 'timeout' => 3000, 'enablePushState' => false, 'id' => 'product-image-gridview']); ?>
+<?php Pjax::begin(['id' => 'product-image-gridview', 'enablePushState' => false, 'timeout' => 5000]); ?>
 <?= GridView::widget([
     'dataProvider' => $dataProviderImage,
     'columns' => [
@@ -44,15 +44,15 @@ use yii\widgets\Pjax;
 
         [
             'class' => 'yii\grid\ActionColumn',
-            'template' => '{up-image}&nbsp;&nbsp;&nbsp;&nbsp;{down-image}&nbsp;&nbsp;&nbsp;&nbsp;{delete-image}',
+            'template' => '{ajax-up-image}&nbsp;&nbsp;&nbsp;&nbsp;{ajax-down-image}&nbsp;&nbsp;&nbsp;&nbsp;{ajax-delete-image}',
             'buttons' => [
-                'up-image' => function ($url) {
+                'ajax-up-image' => function ($url) {
                     return Html::a('<span class="glyphicon glyphicon-arrow-up"></span>',$url);
                 },
-                'down-image' => function ($url) {
+                'ajax-down-image' => function ($url) {
                     return Html::a('<span class="glyphicon glyphicon-arrow-down"></span>',$url);
                 },
-                'delete-image' => function ($url) {
+                'ajax-delete-image' => function ($url) {
                     return Html::a('<span class="glyphicon glyphicon-trash"></span>',$url);
                 },
 

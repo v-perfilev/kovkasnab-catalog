@@ -10,7 +10,7 @@ use yii\grid\GridView;
 ?>
 
 
-<?php Pjax::begin([ 'enablePushState' => false, 'id' => 'feature-value-gridview']); ?>
+<?php Pjax::begin(['id' => 'feature-value-gridview', 'enablePushState' => false]); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProviderValue,
         'columns' => [

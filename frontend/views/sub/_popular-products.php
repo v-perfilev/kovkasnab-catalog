@@ -24,16 +24,34 @@ use yii\helpers\ArrayHelper;
                     <div class="wrapper-1">
                         <div class="wrapper-2">
                             <div class="box">
-                                <a href="<?= Url::to(['product/view', 'slug' => $product->slug]); ?>" title="<?= $product->productCategory->title ?> - <?= $product->title; ?>">
+                                <a href="<?= Url::to(['product/view', 'slug' => $product->slug]) ?>" title="<?= $product->productCategory->title ?> - <?= $product->title; ?>">
                                     <h3 class="vertical-center horizontal-center"><?= $product->title; ?></h3>
+                                    <?php if($product->productOffer->title !== null) { ?>
+
+                                        <div class="yellow-circle vertical-center horizontal-center" style="<?= $product->productOffer->title_style ?>">
+                                            <?= $product->productOffer->title ?>
+                                        </div>
+
+                                    <?php } ?>
+
                                     <div class="image vertical-center horizontal-center">
                                         <?= Html::img('/uploads/product-images/thumb_' . $images[1]->image_url, [
-                                            'alt' => 'Миниатюра: ' . $product->title,
+                                            'alt' => 'Миниатюра: ' .  $product->title,
                                             'title' => $product->title
                                         ]) ?>
                                     </div>
-                                    <div class="price vertical-center horizontal-right">
-                                        <div class="price-actual horizontal-right"><?= $product->price; ?> руб.</div>
+                                    <div class="price vertical-center">
+
+                                        <?php if($product->productOffer->price !== null) { ?>
+
+                                            <div class="price-offer horizontal-left" style="<?= $product->productOffer->price_style ?>">
+                                                <?= $product->productOffer->price ?>
+                                            </div>
+
+                                        <?php } ?>
+
+                                        <div class="price-actual horizontal-right"><?= $product->price ?> руб.</div>
+
                                     </div>
 
                                 </a>

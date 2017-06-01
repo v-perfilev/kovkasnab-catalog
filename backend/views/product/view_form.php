@@ -8,9 +8,9 @@ use yii\widgets\Pjax;
 ?>
 
 
-<?php Pjax::begin(['id' => 'product-image-form', 'enablePushState' => false]); ?>
+<?php Pjax::begin(['id' => 'product-image-form', 'enablePushState' => false, 'timeout' => 5000]); ?>
     <?php $form = ActiveForm::begin([
-        'action' => Url::to(['add-image', 'id' => $modelProduct->id]),
+        'action' => Url::to(['ajax-add-image', 'id' => $modelProduct->id]),
         'options' => ['data-pjax' => true],
     ]); ?>
 

@@ -166,6 +166,15 @@ $this->registerJs(
                                             <td class="second"><?= $f[1] ?></td>
                                         </tr>
                                     <?php } ?>
+
+                                <?php
+                                if (!empty($product->productOffer)) { ?>
+                                        <tr>
+                                            <td class="first"><?= $product->productOffer->title ?>:</td>
+                                            <td class="second"><?= $product->productOffer->price ?></td>
+                                        </tr>
+                                    <?php } ?>
+
                                 </tbody>
                             </table>
                         </div>

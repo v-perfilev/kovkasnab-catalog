@@ -33,8 +33,8 @@ class ProductOffer extends \yii\db\ActiveRecord
     {
         return [
             [['product_id'], 'required'],
-            [['product_id', 'title_style', 'price_style'], 'integer'],
-            [['title', 'price'], 'string', 'max' => 128],
+            [['product_id'], 'integer'],
+            [['title', 'price', 'title_style', 'price_style'], 'string', 'max' => 128],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }

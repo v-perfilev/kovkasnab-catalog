@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\ProductOffer;
 use Yii;
 
 use yii\helpers\ArrayHelper;
@@ -92,11 +93,16 @@ class ProductController extends Controller
         $dataProviderImage = $searchModelImage->search(Yii::$app->request->queryParams);
         $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
+        $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+        $modelNewOffer = new ProductOffer();
+
         return $this->render('view', [
             'modelProduct' => $modelProduct,
             'productFeatures' => $productFeatures,
             'modelImage' => $modelImage,
             'dataProviderImage' => $dataProviderImage,
+            'modelOffer' => $modelOffer,
+            'modelNewOffer' => $modelNewOffer,
         ]);
     }
 
@@ -205,7 +211,7 @@ class ProductController extends Controller
         }
     }
 
-    public function actionAddImage($id)
+    public function actionAjaxAddImage($id)
     {
         if(Yii::$app->request->isAjax) {
 
@@ -226,24 +232,42 @@ class ProductController extends Controller
             }
 
             $modelProduct = $this->findModel($id);
+
             foreach($modelProduct->productFeatures as $f)
                 $modelProduct->features[$f->feature_id] = $f->feature_value_id;
 
+            $features = ArrayHelper::index(Feature::find()->all(), 'id');
+            $values = ArrayHelper::index(FeatureValue::find()->all(), 'id');
+
+            $i = 0;
+            foreach($modelProduct->features as $key => $f) {
+                $productFeatures[$i][0] = $features[$key]->title;
+                $productFeatures[$i][1] = $values[$f]->value;
+                $i++;
+            }
+
+            $modelImage = new ProductImage();
+
             $searchModelImage = new ProductImageSearch();
-            $searchModelImage->product_id = $modelImage->product_id;
+            $searchModelImage->product_id = $id;
             $dataProviderImage = $searchModelImage->search(Yii::$app->request->queryParams);
             $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
+            $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+            $modelNewOffer = new ProductOffer();
+
             return $this->render('view', [
                 'modelProduct' => $modelProduct,
+                'productFeatures' => $productFeatures,
                 'modelImage' => $modelImage,
                 'dataProviderImage' => $dataProviderImage,
+                'modelOffer' => $modelOffer,
+                'modelNewOffer' => $modelNewOffer,
             ]);
         }
-        return $this->redirect(['index']);
     }
 
-    public function actionUpImage($id)
+    public function actionAjaxUpImage($id)
     {
         if(Yii::$app->request->isAjax) {
             $modelImage = ProductImage::findOne($id);
@@ -269,7 +293,7 @@ class ProductController extends Controller
         }
         return $this->redirect(['index']);
     }
-    public function actionDownImage($id)
+    public function actionAjaxDownImage($id)
     {
         if(Yii::$app->request->isAjax) {
             $modelImage = ProductImage::findOne($id);
@@ -296,7 +320,7 @@ class ProductController extends Controller
         return $this->redirect(['index']);
     }
 
-    public function actionDeleteImage($id)
+    public function actionAjaxDeleteImage($id)
     {
         if(Yii::$app->request->isAjax)
         {
@@ -323,6 +347,72 @@ class ProductController extends Controller
             return $this->render('view_gridview', [
                 'dataProviderImage' => $dataProviderImage,
             ]);
+
+        }
+        return $this->redirect(['index']);
+    }
+
+    public function actionAjaxChangeOffer($id)
+    {
+        if(Yii::$app->request->isAjax) {
+
+            $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+            if( empty($modelOffer) )
+                $modelOffer = new ProductOffer();
+
+            if ($modelOffer->load(Yii::$app->request->post())) {
+
+
+                if ($modelOffer->validate()) {
+                    $modelOffer->save();
+                }
+            }
+
+            $modelProduct = $this->findModel($id);
+
+            foreach($modelProduct->productFeatures as $f)
+                $modelProduct->features[$f->feature_id] = $f->feature_value_id;
+
+            $features = ArrayHelper::index(Feature::find()->all(), 'id');
+            $values = ArrayHelper::index(FeatureValue::find()->all(), 'id');
+
+            $i = 0;
+            foreach($modelProduct->features as $key => $f) {
+                $productFeatures[$i][0] = $features[$key]->title;
+                $productFeatures[$i][1] = $values[$f]->value;
+                $i++;
+            }
+
+            $modelImage = new ProductImage();
+
+            $searchModelImage = new ProductImageSearch();
+            $searchModelImage->product_id = $id;
+            $dataProviderImage = $searchModelImage->search(Yii::$app->request->queryParams);
+            $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
+
+            $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+            $modelNewOffer = new ProductOffer();
+
+            return $this->render('view', [
+                'modelProduct' => $modelProduct,
+                'productFeatures' => $productFeatures,
+                'modelImage' => $modelImage,
+                'dataProviderImage' => $dataProviderImage,
+                'modelOffer' => $modelOffer,
+                'modelNewOffer' => $modelNewOffer,
+            ]);
+        }
+        return $this->redirect(['index']);
+    }
+
+    public function actionAjaxClearOffer($id)
+    {
+        if(Yii::$app->request->isAjax)
+        {
+            $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+            $modelOffer->delete();
+
+            return $this->redirect(['view', 'id' => $id]);
 
         }
         return $this->redirect(['index']);

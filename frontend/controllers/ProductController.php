@@ -43,7 +43,7 @@ class ProductController extends Controller
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
         return $this->render('index', [
             'contact' => $contact,
@@ -84,10 +84,10 @@ class ProductController extends Controller
 
         $contact = new ContactForm();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
 
-        $products = Product::find()->where(['availability' => 1])->with(['productImages', 'productFeatures']);
+        $products = Product::find()->where(['availability' => 1])->with(['productCategory', 'productImages', 'productFeatures', 'productOffer']);
 
         $products = $products->where(['product_category_id' => $category->id]);
 
@@ -158,7 +158,7 @@ class ProductController extends Controller
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
         $product = $this->findModelBySlug($slug);
 

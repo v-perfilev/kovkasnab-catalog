@@ -19,7 +19,7 @@ class ProductSearch extends Product
     {
         return [
             [['id', 'product_category_id', 'availability'], 'integer'],
-            [['title', 'slug', 'price', 'size', 'weight', 'meta_title', 'meta_description', 'meta_keywords'], 'safe'],
+            [['title', 'vendor', 'slug', 'price', 'size', 'weight', 'meta_title', 'meta_description', 'meta_keywords'], 'safe'],
         ];
     }
 
@@ -65,6 +65,7 @@ class ProductSearch extends Product
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'vendor', $this->vendor])
             ->andFilterWhere(['like', 'slug', $this->slug])
             ->andFilterWhere(['like', 'price', $this->price])
             ->andFilterWhere(['like', 'size', $this->size])

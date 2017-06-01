@@ -119,6 +119,6 @@ class Product extends \yii\db\ActiveRecord
 
     public function getProductOffer()
     {
-        return $this->hasMany(ProductOffer::className(), ['product_id' => 'id']);
+        return $this->hasOne(ProductOffer::className(), ['product_id' => 'id']);
     }
 }

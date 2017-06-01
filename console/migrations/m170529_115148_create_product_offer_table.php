@@ -17,9 +17,9 @@ class m170529_115148_create_product_offer_table extends Migration
             'id' => $this->primaryKey(),
             'product_id' => $this->integer()->notNull(),
             'title' => $this->string(128),
-            'title_style' => $this->integer(),
+            'title_style' => $this->string(128),
             'price' => $this->string(128),
-            'price_style' => $this->integer(),
+            'price_style' => $this->string(128),
         ]);
 
         $this->createIndex(

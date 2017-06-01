@@ -27,6 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
 
         [
+            'attribute'=>'vendor',
+            'contentOptions' =>['style'=>'vertical-align:middle;'],
+        ],
+
+        [
             'attribute'=>'title',
             'contentOptions' =>['style'=>'vertical-align:middle;'],
         ],
@@ -55,6 +60,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
         [
             'attribute'=>'availability',
+            'headerOptions' => ['width' => '100'],
+            'contentOptions' =>['style'=>'text-align: center; vertical-align:middle;'],
+        ],
+
+        [
+            'attribute'=>'product_offer',
+            'label' => 'Спецпредложение',
+            'value'=>function($data){
+                if (!empty($data->productOffer) )
+                    return 'есть';
+                else
+                    return '';
+            },
             'headerOptions' => ['width' => '100'],
             'contentOptions' =>['style'=>'text-align: center; vertical-align:middle;'],
         ],

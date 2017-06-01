@@ -13,9 +13,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php $this->registerJs(
     '$("document").ready(function(){
-        $("#product-image-form").on("pjax:end", function() {
-            $.pjax.reload({container:"#product-image-gridview"});
+        $("#product-image-form").on("pjax:end", function(event) {
+            $.pjax.reload({
+                container:"#product-image-gridview",
+                timeout: 5000
+            });
         });
+
+        $("#product-offer-form").on("pjax:end", function(event) {
+            $.pjax.reload({
+                container:"#product-offer-list",
+                timeout: 5000
+            });
+        });
+
     });'
 );?>
 
@@ -72,20 +83,35 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php } ?>
 
 
-    <div class="panel panel-default">
-        <div class="panel-body">
+<div class="panel panel-default">
+    <div class="panel-body">
 
-            <?= $this->render('view_form', [
-                'modelImage' => $modelImage,
-                'modelProduct' => $modelProduct,
-            ]); ?>
+        <?= $this->render('view_form', [
+            'modelImage' => $modelImage,
+            'modelProduct' => $modelProduct,
+        ]); ?>
 
-            <br>
+        <br>
 
-            <?= $this->render('view_gridview', [
-                'dataProviderImage' => $dataProviderImage,
-            ]); ?>
+        <?= $this->render('view_gridview', [
+            'dataProviderImage' => $dataProviderImage,
+        ]); ?>
 
-        </div>
     </div>
+</div>
 
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <?= $this->render('view_offer_form', [
+            'modelNewOffer' => $modelNewOffer,
+            'modelProduct' => $modelProduct,
+        ]); ?>
+
+        <?= $this->render('view_offer_list', [
+            'modelOffer' => $modelOffer,
+        ]); ?>
+
+    </div>
+</div>

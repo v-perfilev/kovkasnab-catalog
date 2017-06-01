@@ -79,7 +79,7 @@ class SiteController extends Controller
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
         return $this->render('index', [
             'contact' => $contact,
@@ -95,7 +95,7 @@ class SiteController extends Controller
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
-        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
 
         return $this->render('contacts', [
             'contact' => $contact,
