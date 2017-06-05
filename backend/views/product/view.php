@@ -2,9 +2,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\url;
-use yii\widgets\ActiveForm;
 use yii\widgets\DetailView;
-use yii\widgets\Pjax;
 
 $this->title = $modelProduct->title;
 $this->params['breadcrumbs'][] = ['label' => 'Товары', 'url' => ['index']];
@@ -19,14 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 timeout: 5000
             });
         });
-
-        $("#product-offer-form").on("pjax:end", function(event) {
-            $.pjax.reload({
-                container:"#product-offer-list",
-                timeout: 5000
-            });
-        });
-
     });'
 );?>
 
@@ -86,14 +76,14 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <?= $this->render('view_form', [
+        <?= $this->render('view_image_form', [
             'modelImage' => $modelImage,
             'modelProduct' => $modelProduct,
         ]); ?>
 
         <br>
 
-        <?= $this->render('view_gridview', [
+        <?= $this->render('view_image_gridview', [
             'dataProviderImage' => $dataProviderImage,
         ]); ?>
 
@@ -104,12 +94,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <?= $this->render('view_offer_form', [
-            'modelNewOffer' => $modelNewOffer,
+        <?= $this->render('view_offer', [
             'modelProduct' => $modelProduct,
-        ]); ?>
-
-        <?= $this->render('view_offer_list', [
             'modelOffer' => $modelOffer,
         ]); ?>
 

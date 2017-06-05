@@ -78,8 +78,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view}&nbsp;&nbsp;&nbsp;&nbsp;{update}&nbsp;&nbsp;&nbsp;&nbsp;{delete}',
-                'headerOptions' => ['width' => '150'],
+                'template' => '{view}&nbsp;&nbsp;&nbsp;&nbsp;{update}',
+                'headerOptions' => ['width' => '100'],
                 'contentOptions' =>['style'=>'font-size: 20pt; vertical-align:middle;'],
             ],
         ],

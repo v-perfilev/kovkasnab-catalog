@@ -179,6 +179,12 @@ $this->registerJs(
                             </table>
                         </div>
 
+                        <?php if (!empty($product->productOffer->text)) { ?>
+                            <div class="text">
+                                <?= $product->productOffer->text ?>
+                            </div>
+                        <?php } ?>
+
                         <div class="text">
                             <?= $product->text ?>
                         </div>

@@ -94,7 +94,6 @@ class ProductController extends Controller
         $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
         $modelOffer = ProductOffer::findOne(['product_id' => $id]);
-        $modelNewOffer = new ProductOffer();
 
         return $this->render('view', [
             'modelProduct' => $modelProduct,
@@ -102,7 +101,6 @@ class ProductController extends Controller
             'modelImage' => $modelImage,
             'dataProviderImage' => $dataProviderImage,
             'modelOffer' => $modelOffer,
-            'modelNewOffer' => $modelNewOffer,
         ]);
     }
 
@@ -183,8 +181,6 @@ class ProductController extends Controller
                     $modelFeature->save();
                 }
 
-
-
             return $this->redirect(['view', 'id' => $modelProduct->id]);
         } else {
             foreach($modelProduct->productFeatures as $f)
@@ -254,7 +250,6 @@ class ProductController extends Controller
             $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
             $modelOffer = ProductOffer::findOne(['product_id' => $id]);
-            $modelNewOffer = new ProductOffer();
 
             return $this->render('view', [
                 'modelProduct' => $modelProduct,
@@ -262,7 +257,6 @@ class ProductController extends Controller
                 'modelImage' => $modelImage,
                 'dataProviderImage' => $dataProviderImage,
                 'modelOffer' => $modelOffer,
-                'modelNewOffer' => $modelNewOffer,
             ]);
         }
     }
@@ -313,7 +307,7 @@ class ProductController extends Controller
             $dataProviderImage = $searchModelImage->search(Yii::$app->request->queryParams);
             $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
-            return $this->render('view_gridview', [
+            return $this->render('view_image_gridview', [
                 'dataProviderImage' => $dataProviderImage,
             ]);
         }
@@ -344,7 +338,7 @@ class ProductController extends Controller
             $dataProviderImage = $searchModelImage->search(Yii::$app->request->queryParams);
             $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
-            return $this->render('view_gridview', [
+            return $this->render('view_image_gridview', [
                 'dataProviderImage' => $dataProviderImage,
             ]);
 
@@ -391,7 +385,6 @@ class ProductController extends Controller
             $dataProviderImage->setSort(['defaultOrder' => ['order'=>SORT_ASC]]);
 
             $modelOffer = ProductOffer::findOne(['product_id' => $id]);
-            $modelNewOffer = new ProductOffer();
 
             return $this->render('view', [
                 'modelProduct' => $modelProduct,
@@ -399,21 +392,7 @@ class ProductController extends Controller
                 'modelImage' => $modelImage,
                 'dataProviderImage' => $dataProviderImage,
                 'modelOffer' => $modelOffer,
-                'modelNewOffer' => $modelNewOffer,
             ]);
-        }
-        return $this->redirect(['index']);
-    }
-
-    public function actionAjaxClearOffer($id)
-    {
-        if(Yii::$app->request->isAjax)
-        {
-            $modelOffer = ProductOffer::findOne(['product_id' => $id]);
-            $modelOffer->delete();
-
-            return $this->redirect(['view', 'id' => $id]);
-
         }
         return $this->redirect(['index']);
     }
@@ -429,6 +408,35 @@ class ProductController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+
+
+    public function actionChangeOffer($id)
+    {
+        $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+
+        if( empty($modelOffer) )
+            $modelOffer = new ProductOffer();
+
+        if ($modelOffer->load(Yii::$app->request->post()) && $modelOffer->save()) {
+            return $this->redirect(['view', 'id' => $id]);
+        } else {
+            $modelProduct = $this->findModel($id);
+            return $this->render('offer_form', [
+                'modelProduct' => $modelProduct,
+                'modelOffer' => $modelOffer,
+            ]);
+        }
+    }
+
+
+    public function actionDeleteOffer($id)
+    {
+        $modelOffer = ProductOffer::findOne(['product_id' => $id]);
+        $modelOffer->delete();
+
+        return $this->redirect(['view', 'id' => $id]);
     }
 
     /**

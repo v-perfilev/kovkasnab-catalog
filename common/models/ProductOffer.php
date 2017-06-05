@@ -35,6 +35,7 @@ class ProductOffer extends \yii\db\ActiveRecord
             [['product_id'], 'required'],
             [['product_id'], 'integer'],
             [['title', 'price', 'title_style', 'price_style'], 'string', 'max' => 128],
+            [['text'], 'string'],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
@@ -51,6 +52,7 @@ class ProductOffer extends \yii\db\ActiveRecord
             'title_style' => 'Стиль спецпредложения',
             'price' => 'Спеццена',
             'price_style' => 'Стиль спеццены',
+            'text' => 'Комментарий',
         ];
     }
 

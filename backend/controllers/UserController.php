@@ -77,10 +77,6 @@ class UserController extends Controller
     {
         $model = $this->findModel($id);
 
-        $auth = \Yii::$app->authManager;
-        $userRole = $auth->getRole('admin');
-        $auth->assign($userRole, $model->id);
-
         $userRoles = Yii::$app->authManager->getRolesByUser($model->id);
         $model->role = array_shift($userRoles)->name;
         $model->old_role = $model->role;

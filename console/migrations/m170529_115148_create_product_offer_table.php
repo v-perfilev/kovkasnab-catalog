@@ -20,6 +20,7 @@ class m170529_115148_create_product_offer_table extends Migration
             'title_style' => $this->string(128),
             'price' => $this->string(128),
             'price_style' => $this->string(128),
+            'text' => $this->text(),
         ]);
 
         $this->createIndex(
