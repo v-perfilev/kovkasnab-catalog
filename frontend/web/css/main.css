@@ -569,7 +569,12 @@ h5, h6 {
 .catalog .price {
     width: 100%;
     height: 15%;
-    margin: 1% 0 0;
+    padding: 1% 0 0;
+}
+
+.catalog .price-col {
+    width: 50%;
+    height: 100%;
 }
 
 .catalog .price-actual {
@@ -579,6 +584,8 @@ h5, h6 {
 }
 
 .catalog .price-offer {
+    width: 100%;
+    height: 100%;
     padding: 2px;
     font: bold normal 10pt Arimo;
     color: #222222;

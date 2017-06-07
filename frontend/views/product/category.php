@@ -94,17 +94,22 @@ $this->registerCssFile('/css/_nouislider.min.css');
 													]) ?>
 												</div>
 												<div class="price vertical-center">
-
                                                     <?php if($product->productOffer->price !== null) { ?>
 
-                                                        <div class="price-offer horizontal-left" style="<?= $product->productOffer->price_style ?>">
-                                                            <?= $product->productOffer->price ?>
+                                                        <div class="price-col vertical-center horizontal-left">
+                                                            <div class="price-offer vertical-center horizontal-center" style="<?= $product->productOffer->price_style ?>">
+                                                                <?= $product->productOffer->price ?>
+                                                            </div>
+                                                        </div>
+                                                        <div class="price-col vertical-center horizontal-right">
+                                                            <div class="price-actual horizontal-right"><?= $product->price ?> руб.</div>
                                                         </div>
 
+                                                    <?php } else { ?>
+
+                                                        <div class="price-actual horizontal-right"><?= $product->price ?> руб.</div>
+
                                                     <?php } ?>
-
-                                                    <div class="price-actual horizontal-right"><?= $product->price ?> руб.</div>
-
 												</div>
 
 											</a>
