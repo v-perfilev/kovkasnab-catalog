@@ -167,26 +167,22 @@ $this->registerJs(
                                         </tr>
                                     <?php } ?>
 
-                                <?php
-                                if (!empty($product->productOffer)) { ?>
-                                        <tr>
-                                            <td class="first"><?= $product->productOffer->title ?>:</td>
-                                            <td class="second"><?= $product->productOffer->price ?></td>
-                                        </tr>
-                                    <?php } ?>
-
                                 </tbody>
                             </table>
                         </div>
+                        
+                        <div class="col-md-12">
 
-                        <?php if (!empty($product->productOffer->text)) { ?>
+                            <?php if (!empty($product->productOffer->text)) { ?>
+                                <div class="text">
+                                    <?= $product->productOffer->text ?>
+                                </div>
+                            <?php } ?>
+    
                             <div class="text">
-                                <?= $product->productOffer->text ?>
+                                <?= $product->text ?>
                             </div>
-                        <?php } ?>
-
-                        <div class="text">
-                            <?= $product->text ?>
+                            
                         </div>
 
                     </div>
