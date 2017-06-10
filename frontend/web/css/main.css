@@ -378,6 +378,37 @@ h5, h6 {
     font-size: 20pt;
 }
 
+.home-banner .pricelist  {
+    margin-top: 50px;
+}
+
+.home-banner .pricelist i {
+    font-size: 16pt;
+    margin-right: 10px;
+}
+
+.home-banner .pricelist div{
+    text-decoration: none;
+}
+
+.home-banner .pricelist div {
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    font: normal normal 14pt Arimo;
+    color: #222222;
+    padding: 25px;
+}
+
+.home-banner .pricelist a:hover {
+    text-decoration: none;
+}
+
+.home-banner .pricelist a:hover div  {
+    background: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
 .home-banner .home-categories{
     margin-top: 30px;
     margin-bottom: 100px;

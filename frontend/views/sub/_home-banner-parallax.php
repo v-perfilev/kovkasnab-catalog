@@ -8,8 +8,8 @@ use yii\helpers\Html;
 <div class="home-banner parallax" data-parallax="scroll" data-image-src="<?= $image; ?>" data-speed="0.1">
     <div class="container">
 
-        <div class="hidden-xs hidden-sm contacts row">
-            <div class="col-md-8">
+        <div class="hidden-xs hidden-sm row">
+            <div class="contacts col-md-8">
                 <table>
                     <tr>
                         <td>
@@ -44,6 +44,16 @@ use yii\helpers\Html;
                 </table>
 
             </div>
+            
+            <div class="pricelist col-md-3 col-md-offset-1">
+                <a href="/uploads/Прайс-лист%20Ковкаснаб%2022-06-2017.pdf" target="_blank">
+                    <div class="vertical-cetner horizontal-center">
+                        <i class="fa fa-rub"></i> Прайс-лист
+                    </div>
+                </a>
+            </div>
+            
+            
         </div>
 
         <div class="home-categories row">
