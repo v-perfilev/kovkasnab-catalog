@@ -105,7 +105,7 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionSitemap(){
+    public function actionSitemapxml(){
         $sitemap = new Sitemap();
         //Если в кэше нет карты сайта
         if (!$xml_sitemap = Yii::$app->cache->get('sitemap')) {
@@ -139,14 +139,45 @@ class SiteController extends Controller
         return false;
     }
 
+
     /**
-     * Displays about page.
+     * Displays sitemap page.
      *
      * @return mixed
      */
-    public function actionAbout()
+    public function actionSitemap()
     {
-        return $this->render('about');
+        $this->layout = 'home';
+
+        $contact = new ContactForm();
+        $categories = ProductCategory::find()->orderBy('order ASC')->all();
+        $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
+
+        return $this->render('sitemap', [
+            'contact' => $contact,
+            'categories' => $categories,
+            'popular_products' => $popular_products,
+            'random_posts' => $random_posts,
+        ]);
     }
+
+    public function actionConditions()
+    {
+        $this->layout = 'home';
+
+        $contact = new ContactForm();
+        $categories = ProductCategory::find()->orderBy('order ASC')->all();
+        $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
+
+        return $this->render('conditions', [
+            'contact' => $contact,
+            'categories' => $categories,
+            'popular_products' => $popular_products,
+            'random_posts' => $random_posts,
+        ]);
+    }
+
 
 }

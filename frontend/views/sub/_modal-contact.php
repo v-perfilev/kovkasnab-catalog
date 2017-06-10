@@ -5,7 +5,6 @@ use yii\helpers\Url;
 use yii\bootstrap\Modal;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
-use yii\captcha\Captcha;
 
 $this->registerJs('
 
@@ -41,19 +40,24 @@ $this->registerJs('
 ]); ?>
 
     <?php Pjax::begin(['id' => 'modal-contact-form', 'enablePushState' => false]); ?>
+
         <?php $form = ActiveForm::begin([
             'id' => 'contact-form',
             'action' => Url::to(['site/contact']),
             'options' => ['data-pjax' => true],
         ]); ?>
 
-            <?= $form->field($contact, 'name')->textInput(['autofocus' => true]) ?>
+            <?= $form->field($contact, 'name') ?>
 
             <?= $form->field($contact, 'email') ?>
 
-            <?= $form->field($contact, 'subject') ?>
+            <?= $form->field($contact, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
+                'mask' => '+7 ( 999 ) 999-99-99',
+            ]) ?>
 
             <?= $form->field($contact, 'body')->textarea(['rows' => 6]) ?>
+
+            <?= $form->field($contact, 'conditions')->checkbox(['label'=>'Нажимая кнопку "Отправить" я подтверждаю свою дееспособность и даю согласие на обработку персональных данных в соответствии с '.Html::a('Условиями', ['conditions'], ['target'=>'_blanc', 'data-pjax'=>0])]) ?>
 
             <?= $form->field($contact, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::className()) ?>
 

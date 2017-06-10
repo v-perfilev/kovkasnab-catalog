@@ -12,8 +12,9 @@ class ContactForm extends Model
 {
     public $name;
     public $email;
-    public $subject;
     public $body;
+    public $phone;
+    public $conditions;
     public $reCaptcha;
 
 
@@ -24,8 +25,12 @@ class ContactForm extends Model
     {
         return [
             
-            [['name', 'email', 'subject', 'body'], 'required'],
-            
+            ['phone', 'required'],
+
+            [['name', 'body'],'string'],
+
+            ['conditions', 'required', 'requiredValue' => true],
+
             ['email', 'email'],
             
             [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className()]
@@ -40,7 +45,7 @@ class ContactForm extends Model
         return [
             'name' => 'ФИО',
             'email' => 'E-mail',
-            'subject' => 'Заголовок',
+            'phone' => 'Телефон',
             'body' => 'Сообщение',
             'reCaptcha' => 'Проверка',
         ];
@@ -56,9 +61,9 @@ class ContactForm extends Model
     {
         if(Yii::$app->mailer->compose()
             ->setTo($email)
-            ->setFrom([$this->email => $this->name])
-            ->setSubject("Обратная связь с сайта: ".$this->subject)
-            ->setTextBody($this->body)
+            ->setFrom('noreply@kovkasnab.ru')
+            ->setSubject("Обратная связь с сайта: ".$this->phone)
+            ->setTextBody("Имя: " . $this->name . "\n Емэйл: " . $this->email . "\n Телефон: " . $this->phone . "\n Сообщение: " . $this->body)
             ->send())
             return true;
         else

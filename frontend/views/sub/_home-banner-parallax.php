@@ -38,7 +38,7 @@ use yii\helpers\Html;
                             <i class="fa fa-phone"></i>
                         </td>
                         <td>
-                            <b>8-900-510-7777</b>
+                            <b><a href="tel:8-900-510-7777">8-900-510-7777</a></b>
                         </td>
                     </tr>
                 </table>
