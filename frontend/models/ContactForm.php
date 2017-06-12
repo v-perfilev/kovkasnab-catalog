@@ -27,11 +27,11 @@ class ContactForm extends Model
             
             ['phone', 'required'],
 
+            ['email', 'email'],
+
             [['name', 'body'],'string'],
 
-            ['conditions', 'required', 'requiredValue' => true],
-
-            ['email', 'email'],
+            ['conditions', 'required', 'requiredValue' => true, 'message'=>'Необходимо согласие с Условиями' ],
             
             [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className()]
         ];
