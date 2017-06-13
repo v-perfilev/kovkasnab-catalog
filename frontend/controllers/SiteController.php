@@ -166,7 +166,6 @@ class SiteController extends Controller
 
     public function actionConditions()
     {
-        $this->layout = 'home';
 
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
