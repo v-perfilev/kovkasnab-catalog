@@ -62,7 +62,7 @@ AppAsset::register($this);
                     </a>
                 </div>
 
-                <div class="col-md-7 hidden-xs hidden-sm vertical-center horizontal-center">
+                <div class="col-md-7 col-lg-5 hidden-xs hidden-sm vertical-center horizontal-center">
                     <?= Menu::widget([
                         'options' => ['class' => 'header-menu'],
                         'items' => $menuItems,
@@ -70,7 +70,7 @@ AppAsset::register($this);
                     ]); ?>
                 </div>
 
-                <div class="header-contacts hidden-xs hidden-sm hidden-md vertical-center horizontal-right">
+                <div class="header-contacts col-lg-2 hidden-xs hidden-sm hidden-md vertical-center horizontal-right">
                     <table>
                         <tr>
                             <td>
