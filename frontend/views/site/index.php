@@ -32,12 +32,12 @@ $this->registerMetaTag([
     <div class="nika container">
         <div class="row">
             <div class="nika-text vertical-center col-md-6 col-md-offset-1">
-                <a class="vertical-center" href="http://kuznya-nika.ru" target="_blank">
+                <a class="horizontal-center vertical-center" href="http://kuznya-nika.ru" target="_blank">
                     Принимаем заказы на изготовление кованых и сварных изделий
                 </a>
             </div>
             <div class="col-md-4">
-                <a class="vertical-center" href="http://kuznya-nika.ru" target="_blank">
+                <a class="horizontal-center vertical-center" href="http://kuznya-nika.ru" target="_blank">
                     <?= Html::img(Url::toRoute(['/images/logo-nika.png']), [
                         'class' => 'img-responsive',
                         'alt' => 'Логотип кузни "Ника-3"',
@@ -90,14 +90,14 @@ $this->registerMetaTag([
 
     <div class="how container">
         <div class="row">
-            <div class="title col-md-2 col-md-offset-3 vertical-center horizontal-center">
+            <div class="title col-xs-12 col-md-2 col-md-offset-3 vertical-center horizontal-center">
                 <h2>Как забрать?</h2>
             </div>
-            <div class="item col-md-2 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-sm-6 col-md-2 vertical-center horizontal-center">
                 Самовывоз<br>
                 <i class="fa fa-building"></i>
             </div>
-            <div class="item col-md-2 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-sm-6 col-md-2 vertical-center horizontal-center">
                 Доставка ТК<br>
                 <i class="fa fa-truck"></i>
             </div>
@@ -114,7 +114,7 @@ $this->registerMetaTag([
 
     <div class="advantages container">
         <div class="row">
-            <div class="item col-md-4 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-md-4 vertical-center horizontal-center">
                 <div class="white-circle vertical-center horizontal-center">
                     <i class="fa fa-star"></i>
                 </div>
@@ -122,7 +122,7 @@ $this->registerMetaTag([
                     Мы сотрудничаем непосредственно с крупными заводами-производителями кованых элементов для того, чтобы сделать цены максимально доступными.
                 </p>
             </div>
-            <div class="item col-md-4 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-md-4 vertical-center horizontal-center">
                 <div class="white-circle vertical-center horizontal-center">
                     <i class="fa fa-cog"></i>
                 </div>
@@ -130,7 +130,7 @@ $this->registerMetaTag([
                     “Ковкаснаб” – не просто торговая компания – у нас огромный опыт изготовления изделий с элементами художественной ковки, которым мы будем рады с Вами поделиться.
                 </p>
             </div>
-            <div class="item col-md-4 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-md-4 vertical-center horizontal-center">
                 <div class="white-circle vertical-center horizontal-center">
                     <i class="fa fa-refresh"></i>
                 </div>
@@ -151,18 +151,18 @@ $this->registerMetaTag([
 
     <div class="how container">
         <div class="row">
-            <div class="title col-md-2 col-md-offset-2 vertical-center horizontal-center">
+            <div class="title col-xs-12 col-md-2 col-md-offset-2 vertical-center horizontal-center">
                 <h2>Как оплатить?</h2>
             </div>
-            <div class="item col-md-2 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
                 Наличные<br>
                 <i class="fa fa-rub"></i>
             </div>
-            <div class="item col-md-2 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
                 Пластиковая карта<br>
                 <i class="fa fa-credit-card-alt"></i>
             </div>
-            <div class="item col-md-2 vertical-center horizontal-center">
+            <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
                 Банковский перевод<br>
                 <i class="fa fa-file-text"></i>
             </div>

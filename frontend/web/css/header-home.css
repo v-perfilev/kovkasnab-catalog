@@ -43,3 +43,11 @@
 .header-home .menu-global {
 	border-top: 4px solid #cccccc;
 }
+
+.header-home .header-contacts i {
+	color: #ffffff;
+}
+
+.header-home .header-contacts a {
+	color: #ffffff;
+}

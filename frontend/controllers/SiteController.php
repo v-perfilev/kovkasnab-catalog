@@ -5,6 +5,7 @@ use common\models\Product;
 use common\models\ProductCategory;
 use common\models\Post;
 use Yii;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -74,7 +75,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'home';
+        $this->view->registerCssFile(Url::toRoute(['/css/header-home.css']), ['depends' => ['frontend\assets\AppAsset']]);
+        //$this->layout = 'home';
 
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();

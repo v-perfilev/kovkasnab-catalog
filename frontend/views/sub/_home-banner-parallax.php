@@ -32,13 +32,13 @@ use yii\helpers\Html;
                             <i class="fa fa-envelope"></i>
                         </td>
                         <td>
-                            <a href="mailto:info@kovkasnab.ru">info@kovkasnab.ru</a>
+                            <?= Html::a('info@kovkasnab.ru', 'mailto:info@kovkasnab.ru', ['class' => 'black-link']) ?>
                         </td>
                         <td>
                             <i class="fa fa-phone"></i>
                         </td>
                         <td>
-                            <b><a href="tel:8-900-510-7777">8-900-510-7777</a></b>
+                            <?= Html::a('8-900-510-7777', 'tel:8-900-510-7777', ['class' => 'black-link']) ?>
                         </td>
                     </tr>
                 </table>

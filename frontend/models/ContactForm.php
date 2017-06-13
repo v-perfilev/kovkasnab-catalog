@@ -63,7 +63,7 @@ class ContactForm extends Model
             ->setTo($email)
             ->setFrom('noreply@kovkasnab.ru')
             ->setSubject("Обратная связь с сайта: ".$this->phone)
-            ->setTextBody("Имя: " . $this->name . "\n Емэйл: " . $this->email . "\n Телефон: " . $this->phone . "\n Сообщение: " . $this->body)
+            ->setTextBody("Имя: " . $this->name . "\nЕмэйл: " . $this->email . "\nТелефон: " . $this->phone . "\nСообщение: " . $this->body)
             ->send())
             return true;
         else

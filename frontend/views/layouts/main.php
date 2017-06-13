@@ -24,29 +24,29 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<?php
-$menuItems = [
-    ['label' => 'Главная', 'url' => ['/']],
-    ['label' => 'Каталог', 'url' => ['/product/index']],
-    ['label' => 'Статьи', 'url' => ['/post/index']],
-    ['label' => 'Контакты', 'url' => ['/site/contacts']],
-];
-?>
+    <?php
+    $menuItems = [
+        ['label' => 'Главная', 'url' => ['/']],
+        ['label' => 'Каталог', 'url' => ['/product/index']],
+        ['label' => 'Статьи', 'url' => ['/post/index']],
+        ['label' => 'Контакты', 'url' => ['/site/contacts']],
+    ];
+    ?>
 
-<div class="menu-collapsed hidden-md hidden-lg">
-    <?= Menu::widget([
-        'options' => ['class' => ''],
-        'items' => $menuItems,
-        'linkTemplate' => '<a class="vertical-center horizontal-center" href="{url}">{label}</a>',
-        'activeCssClass'=>'active',
-    ]); ?>
-</div>
+    <div class="menu-collapsed hidden-md hidden-lg">
+        <?= Menu::widget([
+            'options' => ['class' => ''],
+            'items' => $menuItems,
+            'linkTemplate' => '<a class="vertical-center horizontal-center" href="{url}">{label}</a>',
+            'activeCssClass'=>'active',
+        ]); ?>
+    </div>
 
-    <div class="header header-home">
+        <div class="header header-home">
         <div class="container">
             <div class="row">
 
-                <div class="col-xs-7 col-md-4 vertical-center">
+                <div class="col-xs-4 col-md-3 vertical-center horizontal-left">
                     <a class="logo vertical-center" href="/">
                         <?= Html::img(Url::toRoute(['/images/logo.png']), [
                             'class' => 'logo-dim img-responsive',
@@ -58,11 +58,11 @@ $menuItems = [
                             'alt' => 'Логотип магазина кованых элементов "Ковкаснаб"',
                             'title' => 'Кованые элементы "Ковкаснаб"'
                         ]) ?>
-                        <span class="title hidden-xs hidden-sm">КОВКАСНАБ.РУ</span>
+                        <span class="title hidden-xs">КОВКАСНАБ.РУ</span>
                     </a>
                 </div>
 
-                <div class="col-md-7 hidden-xs hidden-sm vertical-center horizontal-right">
+                <div class="col-md-7 hidden-xs hidden-sm vertical-center horizontal-center">
                     <?= Menu::widget([
                         'options' => ['class' => 'header-menu'],
                         'items' => $menuItems,
@@ -70,9 +70,33 @@ $menuItems = [
                     ]); ?>
                 </div>
 
-                <div class="col-xs-5 col-md-1 vertical-center horizontal-right">
-                    <a id="feadback-button" class="feedback" href="#"><i class="fa fa-envelope-o"></i></a>
-                    <div id="burger-button" class=" hidden-md hidden-lg">
+                <div class="header-contacts hidden-xs hidden-sm hidden-md vertical-center horizontal-right">
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="fa fa-envelope"></i>
+                            </td>
+                            <td>
+                                <a href="mailto:info@kovkasnab.ru">info@kovkasnab.ru</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-phone"></i>
+                            </td>
+                            <td>
+                                <b><a href="tel:8-900-510-7777">8-900-510-7777</a></b>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-xs-6 col-md-2 vertical-center horizontal-right">
+                    <button id="feadback-button" class="btn green">ОБРАТНЫЙ ЗВОНОК</button>
+                </div>
+
+                <div class="col-xs-2 hidden-md hidden-lg vertical-center horizontal-right">
+                    <div id="burger-button" class=" ">
                         <span class="menu-global menu-top"></span>
                         <span class="menu-global menu-middle"></span>
                         <span class="menu-global menu-bottom"></span>

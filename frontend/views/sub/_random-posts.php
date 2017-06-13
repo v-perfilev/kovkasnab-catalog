@@ -17,7 +17,7 @@ use yii\helpers\Html;
 
             <?php foreach($random_posts as $post) { ?>
 
-                <div class="item col-md-3">
+                <div class="item col-xs-12 col-sm-6 col-md-3">
                     <a href="<?= Url::to(['post/view', 'slug' => $post->slug]); ?>" title="Статья - <?= $post->title; ?>">
                         <div class="wrapper">
                             <?php if(isset($post->image_url)) { ?>
@@ -42,6 +42,12 @@ use yii\helpers\Html;
             <?php } ?>
 
         </div>
+
+        <br>
+        <p>
+            <?= Html::a('Все статьи', ['post/index'], ['class' => 'black-link']) ?>
+        </p>
+
     </div>
 
     <div class="space-area"></div>

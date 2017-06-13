@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
 
     <div class="catalog container">
 
-        <h2>Случайные товары</h2>
+        <h2>Популярные товары</h2>
 
         <div class="row horizontal-center">
 

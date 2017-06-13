@@ -18,6 +18,7 @@ class AppAsset extends AssetBundle
         'css/main.css',
     ];
     public $js = [
+        'js/zoomsl-3.0.min.js',
         'js/parallax.min.js',
         'js/main.js',
     ];

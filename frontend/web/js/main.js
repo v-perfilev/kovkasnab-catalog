@@ -27,6 +27,15 @@ $('.footer .scroll-button').click(function () {
     return false;
 });
 
+$(".img-zoom").imagezoomsl({
+
+    zoomrange: [2, 6],
+    zoomstart: 3,
+    innerzoom: true,
+    loadopacity: 1,
+    magnifierborder: "none"
+
+});
 
 $(document).ready(function() {
 

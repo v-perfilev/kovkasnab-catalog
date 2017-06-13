@@ -67,7 +67,7 @@ $this->registerJs(
                                     ?>
                                     <?= Html::img('/uploads/product-images/' . $image->image_url, [
                                         'id' => 'full-image-'.$image->id,
-                                        'class' => 'active img-responsive',
+                                        'class' => 'active img-responsive img-zoom',
                                         'alt' => 'Фото: ' .  $product->title . ' ' . $image->id,
                                         'title' => $product->title
                                     ]) ?>
@@ -76,7 +76,7 @@ $this->registerJs(
 
                                     <?= Html::img('/uploads/product-images/' . $image->image_url, [
                                         'id' => 'full-image-'.$image->id,
-                                        'class' => 'img-responsive',
+                                        'class' => 'img-responsive img-zoom',
                                         'alt' => 'Фото: ' .  $product->title . ' ' . $image->id,
                                         'title' => $product->title
                                     ]) ?>

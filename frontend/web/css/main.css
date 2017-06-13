@@ -14,7 +14,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-     text-align: center !important;
+    text-align: center !important;
  }
 
 h1, h2 {
@@ -118,6 +118,17 @@ h5, h6 {
     justify-content: flex-end;
 }
 
+.black-link {
+    color: #222222;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.black-link:hover {
+    color: #222222;
+    text-decoration: none;
+}
+
 
 /* Меню для смартфонов */
 
@@ -192,7 +203,6 @@ h5, h6 {
 
 #burger-button {
     cursor: pointer;
-    margin: 0 0 0 20px;
     padding-left: 1.25em;
     position: relative;
     width: 30px;
@@ -247,7 +257,7 @@ h5, h6 {
     top: 0;
     left: 0;
     right: 0;
-    height: 56px;
+    height: 60px;
 	overflow: hidden;
     background: #ffffff;
 	border-bottom: 1px solid #cccccc;
@@ -284,7 +294,7 @@ h5, h6 {
 
 .header .title {
 	margin-left: 10px;
-    font: bold normal 20pt Comfortaa;	
+    font: bold normal 20pt Comfortaa;
     color: #666666;
 	transition: 1s ease-in-out;
 }
@@ -334,6 +344,21 @@ h5, h6 {
 .header-menu .active a{
     color: #ffffff;
     background: #a62b2b;
+}
+
+.header-contacts td  {
+    padding: 3px 5px;
+}
+
+.header-contacts i {
+    font-size: 12pt;
+    color: #666666;
+}
+
+.header-contacts a {
+    font: bold normal 11pt Comfortaa;
+    text-decoration: none;
+    color: #666666;
 }
 
 .feedback i {  
@@ -499,7 +524,7 @@ h5, h6 {
 /* Ника-3 */
 
 .nika {
-    border: solid 2px #333333;
+    border: solid 1px #666666;
     padding: 20px;
     border-radius: 5px;
 }
@@ -521,7 +546,7 @@ h5, h6 {
 
 .catalog .item {
     text-align: center;
-	padding: 15px;
+    margin: 15px 0;
 }
 
 .catalog .item * {
@@ -529,15 +554,18 @@ h5, h6 {
 }
 
 .catalog .item .wrapper-1 {
-    width: 100%;
-    max-width: 150px;
+    width: 97%;
+    padding: 5%;
+    max-width: 200px;
+    border: solid 1px #666666;
+    border-radius: 5px;
 }
 
 .catalog .item .wrapper-2 {
     overflow: hidden;
     position: relative;
     width: 100%;
-    padding-bottom: 170%;
+    padding-bottom: 160%;
 }
 
 .catalog.main-catalog .item .wrapper-2 {
@@ -553,7 +581,7 @@ h5, h6 {
 }
 
 .catalog .item a h3 {
-    height: 20%;
+    height: 22%;
     margin: 0 0 1%;
     color: #222222;
 	border-radius: 3px;
@@ -567,7 +595,7 @@ h5, h6 {
 
 .catalog .yellow-circle {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
     width: 70px;    
     height: 70px;
@@ -735,6 +763,13 @@ h5, h6 {
     width: 100%;
 }
 
+.btn.green {
+    padding: 8px 10px;
+    font: bold normal 10pt Arimo;
+    color: #ffffff;
+    background: #1f9a2d;
+}
+
 form .btn {
     padding: 8px 10px;
     font: bold normal 10pt Arimo;
@@ -831,12 +866,18 @@ form .btn.gray{
     width: 100%;
     height: 100%;
     opacity: 0;
+    display: none;
     border-radius: 3px;
     transition: 1s ease-in-out;
 }
 
 .product .full-image img.active {
     opacity: 1;
+    display: block;
+}
+
+.magnifier {
+    background: #fff;
 }
 
 .product .preview-images {

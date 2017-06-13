@@ -73,7 +73,7 @@ $this->registerCssFile('/css/_nouislider.min.css');
 								$images = ArrayHelper::index($product->productImages, 'order');
 							?>
 
-							<div class="item col-xs-6 col-md-3 horizontal-center">
+							<div class="item col-xs-6 col-sm-4 col-md-4 col-lg-3 horizontal-center">
 								<div class="wrapper-1">
 									<div class="wrapper-2">
 										<div class="box">
