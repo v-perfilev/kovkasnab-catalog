@@ -90,17 +90,19 @@ $this->registerMetaTag([
 
     <div class="how container">
         <div class="row">
-            <div class="title col-xs-12 col-md-2 col-md-offset-3 vertical-center horizontal-center">
-                <h2>Как забрать?</h2>
-            </div>
-            <div class="item col-xs-12 col-sm-6 col-md-2 vertical-center horizontal-center">
-                Самовывоз<br>
-                <i class="fa fa-building"></i>
-            </div>
-            <div class="item col-xs-12 col-sm-6 col-md-2 vertical-center horizontal-center">
-                Доставка ТК<br>
-                <i class="fa fa-truck"></i>
-            </div>
+            <a href="/site/delivery-payment#delivery">
+                <div class="title col-xs-12 col-md-2 col-md-offset-3 vertical-center horizontal-center">
+                    <h2>Как забрать?</h2>
+                </div>
+                <div class="item col-xs-12 col-sm-6 col-md-2 vertical-center horizontal-center">
+                    Самовывоз<br>
+                    <i class="fa fa-building"></i>
+                </div>
+                <div class="item col-xs-12 col-sm-6 col-md-2 vertical-center horizontal-center">
+                    Доставка ТК<br>
+                    <i class="fa fa-truck"></i>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -151,21 +153,23 @@ $this->registerMetaTag([
 
     <div class="how container">
         <div class="row">
-            <div class="title col-xs-12 col-md-2 col-md-offset-2 vertical-center horizontal-center">
-                <h2>Как оплатить?</h2>
-            </div>
-            <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
-                Наличные<br>
-                <i class="fa fa-rub"></i>
-            </div>
-            <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
-                Пластиковая карта<br>
-                <i class="fa fa-credit-card-alt"></i>
-            </div>
-            <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
-                Банковский перевод<br>
-                <i class="fa fa-file-text"></i>
-            </div>
+            <a href="/site/delivery-payment#payment">
+                <div class="title col-xs-12 col-md-2 col-md-offset-2 vertical-center horizontal-center">
+                    <h2>Как оплатить?</h2>
+                </div>
+                <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
+                    Наличные<br>
+                    <i class="fa fa-rub"></i>
+                </div>
+                <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
+                    Пластиковая карта<br>
+                    <i class="fa fa-credit-card-alt"></i>
+                </div>
+                <div class="item col-xs-12 col-sm-4 col-md-2 vertical-center horizontal-center">
+                    Банковский перевод<br>
+                    <i class="fa fa-file-text"></i>
+                </div>
+            </a>
         </div>
     </div>
 

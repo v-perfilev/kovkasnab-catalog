@@ -31,6 +31,15 @@ h5, h6 {
     font: bold normal 10pt Arimo;
 }
 
+a {
+    color: #0062b9;
+}
+
+a:hover {
+    color: #0062b9;
+    text-decoration: underline;
+}
+
 .btn:focus, .form-control:focus {
     border-color: #cccccc;
     outline: 0;
@@ -42,6 +51,11 @@ h5, h6 {
     color: #ffffff;
 }
 
+.breadcrumb {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
 
 /* Общие стили */
 
@@ -89,44 +103,48 @@ h5, h6 {
 .vertical-top {
     display: flex;
     align-items: flex-start;
+    z-index: 1;
 }
 
 .vertical-center {
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .vertical-bottom {
     display: flex;
     align-items: flex-end;
+    z-index: 1;
 }
 
 .horizontal-left {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    z-index: 1;
 }
 
 .horizontal-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 1;
 }
 
 .horizontal-right {
     display: flex;
     justify-content: flex-end;
+    z-index: 1;
 }
 
 .black-link {
     color: #222222;
     font-weight: bold;
-    text-decoration: underline;
 }
 
 .black-link:hover {
     color: #222222;
-    text-decoration: none;
 }
 
 
@@ -157,6 +175,7 @@ h5, h6 {
 }
 
 .menu-expanded {
+    z-index: 5;
     opacity: 1;
     transition: all .25s;
     text-align: center;
@@ -178,7 +197,7 @@ h5, h6 {
 }
 
 .menu-expanded li {
-    height: 25%;
+    height: 16.7%;
     position: relative;
 }
 
@@ -258,7 +277,6 @@ h5, h6 {
     left: 0;
     right: 0;
     height: 60px;
-	overflow: hidden;
     background: #ffffff;
 	border-bottom: 1px solid #cccccc;
 	transition: 1s ease-in-out;
@@ -266,9 +284,8 @@ h5, h6 {
 
 
 .header .container, .header .row, .header [class*='col-'] {
-    position: relative;
-    height: 100%;    
-}
+     height: 100%;
+ }
 
 .header .logo {
     position: relative;
@@ -300,31 +317,35 @@ h5, h6 {
 }
 
 .header-menu {
-    margin: 0;    
+    margin: 0;
 }
 
-.header-menu li {
+.header-menu > li {
+    z-index: 0;
+    margin: 0;
 	position: relative;
-    display: inline;
+    display: inline-block;
 }
 
-.header-menu ul {
-	z-index: 10;
+.header-menu li > ul {
 	position: absolute;
-	right: -9999px;
-    padding: 25px 0 10px 0;
-	background: #ffffff;
+    padding: 18px 0 0;
+    left: 9999px;
 	opacity: 0;
 	transition: opacity 1s ease-in-out, background 1s ease-in-out, color 1s ease-in-out;
+    background: #ffffff;
 }
 
-.header-menu ul:hover, .header-menu li:hover ul {
-	right: 0;
+.header-menu li > ul > li {
+    padding: 5px;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+.header-menu li > ul:hover, .header-menu li:hover > ul {
+    left: 0;
 	opacity: 1;
-}
-
-.header-menu ul li {
-    margin: 0;
 }
 
 .header-menu a {    
@@ -333,17 +354,11 @@ h5, h6 {
     color: #666666;
 	text-decoration: none;
 	border-radius: 2px;
-	/*transition: 1s ease-in-out;*/
 }
 
 .header-menu a:hover {
     color: #000000;
     text-decoration: none;
-}
-
-.header-menu .active a{
-    color: #ffffff;
-    background: #a62b2b;
 }
 
 .header-contacts td  {
@@ -546,7 +561,7 @@ h5, h6 {
 
 .catalog .item {
     text-align: center;
-    margin: 15px 0;
+    margin: 10px 0 20px;
 }
 
 .catalog .item * {
@@ -1007,6 +1022,10 @@ form .btn.gray{
 .how .item i {
     margin: 20px;
     font-size: 50pt;
+}
+
+.how a {
+    color: #222222;
 }
 
 /* Блок преимущества */

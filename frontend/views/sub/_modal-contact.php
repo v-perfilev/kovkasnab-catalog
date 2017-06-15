@@ -57,7 +57,7 @@ $this->registerJs('
 
             <?= $form->field($contact, 'body')->textarea(['rows' => 6]) ?>
 
-            <?= $form->field($contact, 'conditions')->checkbox(['label'=>'Нажимая кнопку "Отправить" я подтверждаю свою дееспособность и даю согласие на обработку персональных данных в соответствии с '.Html::a('Условиями', ['conditions'], ['target'=>'_blanc', 'data-pjax'=>0])])->label('Согласие на обработку данных *') ?>
+            <?= $form->field($contact, 'conditions')->checkbox(['label'=>'Нажимая кнопку "Отправить" я подтверждаю свою дееспособность и даю согласие на обработку персональных данных в соответствии с '.Html::a('Условиями', ['/conditions'], ['target'=>'_blanc', 'data-pjax'=>0])])->label('Согласие на обработку данных *') ?>
 
             <?= $form->field($contact, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::className())->label('Проверка *') ?>
 

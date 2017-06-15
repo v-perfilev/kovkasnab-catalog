@@ -51,3 +51,7 @@
 .header-home .header-contacts a {
 	color: #ffffff;
 }
+
+.header-home .header-menu li > ul > li {
+	border: none;
+}

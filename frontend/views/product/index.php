@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\widgets\Breadcrumbs;
 
 $this->title = 'Кованые элементы: каталог, купить, цена, фото – Ковкаснаб';
 
@@ -14,9 +15,10 @@ $this->registerMetaTag([
     'content' => 'Каталог кованых элементов. Кованые элементы для ворот, заборов, лестниц, перил и других изделий художественной ковки. Цены, характеристики и фото.'
 ], 'meta-description');
 
+
+$this->params['breadcrumbs'][] = ['label' => 'Каталог'];
+
 ?>
-
-
 
 <?= $this->render('/sub/_modal-contact', [
     'contact' => $contact,
@@ -33,7 +35,13 @@ $this->registerMetaTag([
 
     <div class="catalog catalog-categories main-catalog container">
 
+        <div class="breadcrumb">
+            <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], ]) ?>
+        </div>
+
         <h1>Категории</h1>
+
+        <div class="space-area"></div>
 
         <div class="row horizontal-center">
 

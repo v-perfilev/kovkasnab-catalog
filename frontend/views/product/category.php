@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
+use yii\widgets\Breadcrumbs;
 
 
 $this->title = $category->meta_title;
@@ -38,6 +39,9 @@ $this->registerJsFile('/js/wNumb.js');
 
 $this->registerCssFile('/css/_nouislider.min.css');
 
+$this->params['breadcrumbs'][] = ['label' => 'Каталог', 'url' => ['/product']];
+$this->params['breadcrumbs'][] = ['label' => $category->title];
+
 ?>
 
 <?= $this->render('/sub/_modal-contact', [
@@ -54,6 +58,10 @@ $this->registerCssFile('/css/_nouislider.min.css');
     <div class="space-area"></div>
 
     <div class="catalog container">
+
+        <div class="breadcrumb">
+            <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], ]) ?>
+        </div>
 
         <h1><?= $category->title ?></h1>
 

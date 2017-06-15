@@ -149,8 +149,6 @@ class SiteController extends Controller
      */
     public function actionSitemap()
     {
-        $this->layout = 'home';
-
         $contact = new ContactForm();
         $categories = ProductCategory::find()->orderBy('order ASC')->all();
         $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
@@ -180,5 +178,37 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionDeliveryPayment()
+    {
+
+        $contact = new ContactForm();
+        $categories = ProductCategory::find()->orderBy('order ASC')->all();
+        $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
+
+        return $this->render('delivery-payment', [
+            'contact' => $contact,
+            'categories' => $categories,
+            'popular_products' => $popular_products,
+            'random_posts' => $random_posts,
+        ]);
+    }
+
+
+    public function actionAbout()
+    {
+
+        $contact = new ContactForm();
+        $categories = ProductCategory::find()->orderBy('order ASC')->all();
+        $random_posts = Post::find()->orderBy('RAND()')->limit(4)->all();
+        $popular_products = Product::find()->orderBy('RAND()')->where(['availability' => 1])->with('productImages', 'productOffer')->limit(4)->all();
+
+        return $this->render('about', [
+            'contact' => $contact,
+            'categories' => $categories,
+            'popular_products' => $popular_products,
+            'random_posts' => $random_posts,
+        ]);
+    }
 
 }

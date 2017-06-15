@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use yii\widgets\Breadcrumbs;
 
 $this->title = $product->meta_title;
 
@@ -30,6 +31,10 @@ $this->registerJs(
     });'
 );
 
+$this->params['breadcrumbs'][] = ['label' => 'Каталог', 'url' => ['/product']];
+$this->params['breadcrumbs'][] = ['label' => $product->productCategory->title, 'url' => [$product->productCategory->slug]];
+$this->params['breadcrumbs'][] = ['label' => $product->title];
+
 ?>
 
 <?= $this->render('/sub/_modal-contact', [
@@ -50,6 +55,10 @@ $this->registerJs(
         <div class="space-area"></div>
 
         <div class="product container">
+
+            <div class="breadcrumb">
+                <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], ]) ?>
+            </div>
 
             <h1><?= $product->title ?></h1>
 

@@ -27,8 +27,21 @@ AppAsset::register($this);
     <?php
     $menuItems = [
         ['label' => 'Главная', 'url' => ['/']],
-        ['label' => 'Каталог', 'url' => ['/product/index']],
+        ['label' => 'Каталог', 'url' => ['/product/index'], 'items' => [
+            ['label' => 'Доставка и оплата', 'url' => ['/site/delivery-payment']],
+        ]],
         ['label' => 'Статьи', 'url' => ['/post/index']],
+        ['label' => 'О нас', 'url' => ['/site/about'], 'items' => [
+            ['label' => 'Контакты', 'url' => ['/site/contacts']],
+        ]],
+    ];
+
+    $menuItemsExpanded = [
+        ['label' => 'Главная', 'url' => ['/']],
+        ['label' => 'Каталог', 'url' => ['/product/index']],
+        ['label' => 'Доставка и оплата', 'url' => ['/site/dostavka&oplata']],
+        ['label' => 'Статьи', 'url' => ['/post/index']],
+        ['label' => 'О нас', 'url' => ['/site/about']],
         ['label' => 'Контакты', 'url' => ['/site/contacts']],
     ];
     ?>
@@ -36,9 +49,8 @@ AppAsset::register($this);
     <div class="menu-collapsed hidden-md hidden-lg">
         <?= Menu::widget([
             'options' => ['class' => ''],
-            'items' => $menuItems,
+            'items' => $menuItemsExpanded,
             'linkTemplate' => '<a class="vertical-center horizontal-center" href="{url}">{label}</a>',
-            'activeCssClass'=>'active',
         ]); ?>
     </div>
 
@@ -65,8 +77,8 @@ AppAsset::register($this);
                 <div class="col-md-7 col-lg-5 hidden-xs hidden-sm vertical-center horizontal-center">
                     <?= Menu::widget([
                         'options' => ['class' => 'header-menu'],
+                        'itemOptions' => ['class' => 'vertical-center'],
                         'items' => $menuItems,
-                        'activeCssClass'=>'active',
                     ]); ?>
                 </div>
 
