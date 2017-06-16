@@ -34,12 +34,15 @@ $this->registerMetaTag([
 
             <div class="col-md-4 col-md-offset-1 text">
                 <p>
-                    <h3>О "Ковкаснаб"</h3>
+                    <h3>Ковкаснаб</h3>
                     <ul>
                         <li><a href="/">Главная</a></li>
                         <li><a href="/product">Каталог</a></li>
+                        <li><a href="/contacts">Доставка и оплата</a></li>
                         <li><a href="/post">Статьи</a></li>
+                        <li><a href="/about">О нас</a></li>
                         <li><a href="/contacts">Контакты</a></li>
+                        <li><a href="/conditions">Условия обработки персональной информации</a></li>
                         <li><a href="/sitemap">Карта сайта</a></li>
                     </ul>
                 </p>

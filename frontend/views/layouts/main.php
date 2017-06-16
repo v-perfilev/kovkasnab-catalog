@@ -124,12 +124,45 @@ AppAsset::register($this);
 
     <div class="footer">
         <div class="container">
-            <div class="row vertical-center">
-                <div class="col-md-3">
-                    © 2016 – 2017 | Ковкаснаб
+            <div class="row">
+                <div class="col-xs-12 col-md-3 vertical-center horizontal-center">
+                    <b>© 2016 – 2017 | Ковкаснаб</b>
                 </div>
 
-                <div class="col-md-3 col-md-offset-6">
+                <div class="col-xs-12 col-md-2 vertical-center horizontal-center">
+                    <a href="/sitemap">Карта сайта</a>
+                </div>
+
+                <div class="col-xs-12 col-md-4 vertical-center horizontal-center">
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="fa fa-home"></i>
+                            </td>
+                            <td>
+                                г. Тамбов, ул. Урожайная, 1А
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-envelope"></i>
+                            </td>
+                            <td>
+                                <a href="mailto:info@kovkasnab.ru">info@kovkasnab.ru</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-phone"></i>
+                            </td>
+                            <td>
+                                <b><a href="tel:8-900-510-7777">8-900-510-7777</a></b>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-xs-12 col-md-3 vertical-center horizontal-center">
 
                     <!-- Yandex.Metrika counter -->
                     <script type="text/javascript">
@@ -209,15 +242,17 @@ AppAsset::register($this);
 
                 </div>
 
-                <div class="scroll-button vertical-center horizontal-center">
-                    <?= Html::img(Url::toRoute(['/images/arrow_white.png']), [
-                        'class' => 'arrow_white',
-                    ]) ?>
-                    <?= Html::img(Url::toRoute(['/images/arrow_gray.png']), [
-                        'class' => 'arrow_gray',
-                    ]) ?>
-                </div>
             </div>
+
+            <div class="scroll-button vertical-center horizontal-center">
+                <?= Html::img(Url::toRoute(['/images/arrow_white.png']), [
+                    'class' => 'arrow_white',
+                ]) ?>
+                <?= Html::img(Url::toRoute(['/images/arrow_gray.png']), [
+                    'class' => 'arrow_gray',
+                ]) ?>
+            </div>
+
         </div>
     </div>
 

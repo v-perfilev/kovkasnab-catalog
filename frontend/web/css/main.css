@@ -1162,14 +1162,35 @@ form .btn.gray{
 
 .footer {
     background: #222222;
-    height: 100px;
-    
 }
 
 .footer .container, .footer .row {
     position: relative;
-    height: 100%;
-    font: normal normal 12pt Arimo; 
+    font: bold normal 12pt Arimo;
+    color: #ffffff;
+}
+
+.footer .row > div {
+    min-height: 100px;
+}
+
+.footer a {
+    font: normal normal 12pt Arimo;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer td  {
+    padding: 4px 5px;
+}
+
+.footer i {
+    font-size: 12pt;
     color: #ffffff;
 }
 
@@ -1179,7 +1200,7 @@ form .btn.gray{
     right: 1%;
     bottom: 0;
     width: 50px;
-    height: 50px;    
+    height: 50px;
     background: #a62b2b;
 	border-radius: 0 0 2px 2px;
     cursor: pointer;
