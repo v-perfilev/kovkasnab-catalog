@@ -32,7 +32,7 @@ $this->registerJs(
 );
 
 $this->params['breadcrumbs'][] = ['label' => 'Каталог', 'url' => ['/product']];
-$this->params['breadcrumbs'][] = ['label' => $product->productCategory->title, 'url' => [$product->productCategory->slug]];
+$this->params['breadcrumbs'][] = ['label' => $product->productCategory->title, 'url' => ['/category/' . $product->productCategory->slug]];
 $this->params['breadcrumbs'][] = ['label' => $product->title];
 
 ?>

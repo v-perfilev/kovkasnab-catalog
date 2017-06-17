@@ -608,18 +608,6 @@ a:hover {
     color: #ffffff;
 }
 
-.catalog .yellow-circle {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 70px;    
-    height: 70px;
-    border-radius: 35px;
-    background: #ffff33;
-    font: bold normal 10pt Arimo;
-    color: #222222;
-}
-
 .catalog .image {
     height: 63%;
     margin: 0;
@@ -670,8 +658,8 @@ a:hover {
 
 .catalog .yellow-circle {
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 25%;
+    right: 0;
     width: 70px;
     height: 70px;
     border-radius: 35px;
@@ -680,6 +668,13 @@ a:hover {
     line-height: 11pt;
     color: #222222;
     z-index: -1;
+}
+
+.catalog .vendor {
+    position: absolute;
+    top: 25%;
+    font: bold italic 8pt Arimo;
+    color: #999999;
 }
 
 /* Блок фильтр */

@@ -95,6 +95,8 @@ $this->params['breadcrumbs'][] = ['label' => $category->title];
 
                                                 <?php } ?>
 
+                                                <div class="vendor">Арт. <?= $product->vendor ?></div>
+
 												<div class="image vertical-center horizontal-center">
 													<?= Html::img('/uploads/product-images/thumb_' . $images[1]->image_url, [
 														'alt' => 'Миниатюра: ' .  $product->title,
