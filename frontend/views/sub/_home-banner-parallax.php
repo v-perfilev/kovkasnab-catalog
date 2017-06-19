@@ -10,6 +10,7 @@ use yii\helpers\Html;
 
         <div class="hidden-xs hidden-sm row">
             <div class="contacts col-md-8">
+                
                 <table>
                     <tr>
                         <td>

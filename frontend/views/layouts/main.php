@@ -39,7 +39,7 @@ AppAsset::register($this);
     $menuItemsExpanded = [
         ['label' => 'Главная', 'url' => ['/']],
         ['label' => 'Каталог', 'url' => ['/product/index']],
-        ['label' => 'Доставка и оплата', 'url' => ['/site/dostavka&oplata']],
+        ['label' => 'Доставка и оплата', 'url' => ['/site/delivery-payment']],
         ['label' => 'Статьи', 'url' => ['/post/index']],
         ['label' => 'О нас', 'url' => ['/site/about']],
         ['label' => 'Контакты', 'url' => ['/site/contacts']],
